@@ -6,6 +6,9 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatOpenAI
 
+api_key = os.getenv("OPENAI_API_KEY")
+embeddings = OpenAIEmbeddings(openai_api_key=api_key)
+
 VECTOR_DIR = Path(__file__).parent / "vectorstore"
 
 def load_vectorstore_from_disk() -> FAISS:
